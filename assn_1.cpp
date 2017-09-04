@@ -42,7 +42,7 @@ int main() {
     //Output our formatted sales information
     cout << left << setw(col_1) << "DeLIGHTful Cones: "     << setw(col_2) << single_scoop_sold << "$" << setw(col_3) << single_scoop_total << endl;
     cout << left << setw(col_1) << "Double DeLIGHT Cones: " << setw(col_2) << double_scoop_sold << "$" << setw(col_3) << double_scoop_total << endl;
-    cout << left << setw(col_1) << "Triple DeLIGHT Cones: " << setw(col_2) << triple_scoop_sold << "$" << setw(col_3) << triple_scoop_cost << endl;
+    cout << left << setw(col_1) << "Triple DeLIGHT Cones: " << setw(col_2) << triple_scoop_sold << "$" << setw(col_3) << triple_scoop_total << endl;
     cout << left << setw(col_1) << "Total: " << setw(col_2) << total_num_sold << "$" << setw(col_3) << total_money;
 
     return 0;
