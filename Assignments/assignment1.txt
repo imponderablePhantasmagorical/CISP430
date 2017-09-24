@@ -1,0 +1,19 @@
+for(i = 2; i < n; i++) {
+    for(j = 2; j < (i/j); j++ {
+        if(!(i%j)) break; //not prime
+        if(j > (i/j)) break;
+
+
+Cost Analysis
+Line    Cost    Times
+1       C1      n
+2       C2      sigma(j=2 -> i/j) t
+3       C3      signma(j=2 -> i/j) (t-1)
+4       C4      signma(j=2 -> i/j) (t-1)
+
+C1(n) + C2(sigma(j=2 -> i/j) t) + (C4 + C4)(sigma(j=2 -> i/j) t-1)
+
+Without cost: n + sigma(j=2 -> i/j) t + sigma(j=2 -> i/j t-1)
+
+
+O time: O(n^2). At worst, every iteration will have to run through both full loops before finishing. Quadratic time.
