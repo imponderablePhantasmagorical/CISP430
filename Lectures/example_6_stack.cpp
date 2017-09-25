@@ -37,7 +37,7 @@ void push(int item) {
     stack[top] = item;
 }
 
-int pull() {
+int pop() {
     if(is_empty()) {
         cout << "Stack is empty. Cannot pop" << endl;
         return 0;
@@ -50,9 +50,11 @@ int pull() {
 int main() {
     push(10);
     push(5);
-    cout << pull() << endl;
-    cout << pull() << endl;
-    cout << pull() << endl; //Produces error
+    push(3);
+    push(30);
 
+    while(!is_empty()) {
+        cout << pop() << " ";
+    }
     return 0;
 }
