@@ -38,7 +38,7 @@ int eval_postfix(string postfix) {
 
         if(!is_operator(current_char)) {
             //Operand found. Convert to int and push onto the stack
-            int current_num = (int)current_char;
+            int current_num = (int)current_char-'0';
             push(current_num);
         } else {
             //found an operator, apply it to the two previously found operands 
