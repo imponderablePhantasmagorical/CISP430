@@ -30,3 +30,10 @@ Linked List:
 Linked list implementation is more robust when dequeueing due to it's lack of need for a shifting and it's ability to expand or contract depending on what is being inserted and removed.
 ```
 ```
+
+
+### Usage / Special Implementation
+Priority Queue
+1. Every item has a priority
+2. An element with a high priority is dequeued before a low priority element
+3. Elements with an equal priority are served in the order they are found in the queue
