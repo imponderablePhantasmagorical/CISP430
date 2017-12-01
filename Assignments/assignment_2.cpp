@@ -1,3 +1,9 @@
+/*
+Taylor Britton
+CISP 430 - Mon/Wed 1:00pm
+Assignment 2 - Fibonacci Table
+*/
+
 #include <iostream>
 #include <iomanip>
 

@@ -1,0 +1,11 @@
+﻿Q1: Submitted as a separate PDF (page scan)
+ 
+Q2:
+
+
+A.)
+        Pre Order: 7 3 1 0 2 6 4 5 12 9 8 11 10 13 15 14
+        Post Order: 0 2 1 5 4 6 3 8 10 11 9 14 15 13 12 7
+B.)
+        Pre Order: 10 7 3 1 6 4 18 15 14 25 22 28
+        Post Order: 1 4 6 3 7 14 15 22 28 25 18 10

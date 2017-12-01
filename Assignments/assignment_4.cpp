@@ -8,7 +8,7 @@ int stack[MAX];
 int top = -1;
 
 bool is_operator(char symbol);
-int is_empty();
+
 int is_full();
 int peek();
 void push(char item);
@@ -16,21 +16,27 @@ int pop();
 int eval_postfix(string);
 int eval_operation(int,int,char);
 
+//is_empty collides with std namespace, has to be it's own
+
+namespace Postfix {
+	int is_empty();
+}
+
 
 int main() {
-    cout << eval_postfix("53+2*");
+    cout << eval_postfix("6324+-*");
     return 0;
 }
 
 int eval_postfix(string postfix) {
     /*
     Evaluating a postfix string
-    1. Scan the postfix from LEFT TO RIGHT, until end of postfix
+    1. Scan the postfix from LEFT TO RIGHT, until end of postfix string
     2. If a char is operand (0..9), push char into stack and go back to 1
     3. Else if a char is operator (\*, +, -, /), pop the two elements from the stack. 
     4. Apply the operation to the popped elements from step 3.
     5. Push the result back into the stack
-    6. When postfix is done being evaluated, the last element in the stack is the answer
+    6. When postfix string is done being evaluated, the last element in the stack is the answer
     */
     for(int i=0; i < postfix.length(); i++) {
         //Set our current character for analysis
@@ -79,7 +85,7 @@ int eval_operation(int a, int b, char operation) {
 }
 
 //Stack
-int is_empty() {
+int Postfix::is_empty() {
     if(top == -1) {
         return 1;
     } else {
@@ -96,7 +102,7 @@ int is_full() {
 }
 
 int peek() {
-    if(is_empty()) {
+    if(Postfix::is_empty()) {
         cout << "Stack is empty. Cannot peek" << endl;
     }
     return stack[top];
@@ -112,7 +118,7 @@ void push(char item) {
 }
 
 int pop() {
-    if(is_empty()) {
+    if(Postfix::is_empty()) {
         cout << "Stack is empty. Cannot pop" << endl;
         return 0;
     }
@@ -120,3 +126,11 @@ int pop() {
     top = top - 1;
     return temp;
 }
+
+
+/* Sample Output 
+*  input:  "53+2"
+*  output: 16
+*  (5 + 3 * 2 = 16)
+*/
+

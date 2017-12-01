@@ -1,3 +1,7 @@
+/*  Taylor Britton
+ *  CISP430 - Mon/Wed 1:00pm
+ *  Assignment 3
+ */
 #include <iostream>
 #include <string>
 
@@ -48,7 +52,11 @@ char pop() {
 
 int main() {
     bool error_flag = false; //Flag to end early due to error in parsing
-    std::string input = "{(([]))}";
+    std::cout << "Enter a string to parse: ";
+    std::string input;
+    std::cin >> input;
+
+    //std::string input = "{(([]))}";
 
     //Iterate through our input
     for(int i = 0; i < input.size(); i++) {
@@ -94,8 +102,10 @@ int main() {
         }
     }
     //If there were no errors, our string has balanced symbols
-    if(!error_flag) {
-        std::cout << "The string is balanced!" << std::endl;
+    if(!error_flag && is_empty()) {
+        std::cout << "True" << std::endl;
+    } else {
+        std::cout << "False" << std::endl;
     }
     return 0;
 }
