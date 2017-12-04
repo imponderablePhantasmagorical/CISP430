@@ -16,14 +16,17 @@ Graph::Graph(int size) {
 }
 
 void Graph::add_edge(int source, int destination, int weight) {
-    //Create the new node
-    AdjacencyListNode* new_node = new AdjacencyListNode(destination, weight);
+    //Create edges to and from our source and destination (non-directional)
+    AdjacencyListNode* dest_to_src_node = new AdjacencyListNode(destination, weight);
+    AdjacencyListNode* src_to_dest_node = new AdjacencyListNode(source, weight);
 
-    //Set our new node's next to the list's current head
-    new_node->next = vertex_list[source].head;
+    //Set our nodes' next to the adjacency list's current head
+    dest_to_src_node->next = vertex_list[source].head;
+    src_to_dest_node->next = vertex_list[destination].head;
 
-    //Make our new node the head of our list, thus "pushing" it into the array
-    vertex_list[source].head = new_node;
+    //Make our new nodes the head of our lists, thus "pushing" it into their respective adjacency list 
+    vertex_list[source].head = dest_to_src_node;
+    vertex_list[destination].head = src_to_dest_node;
 }
 
 void Graph::print() {
@@ -38,5 +41,14 @@ void Graph::print() {
             curr_vertex = curr_vertex->next;
         }
         cout << endl;
+    }
+}
+
+void Graph::print_adjacent_nodes(int node_id) {
+    AdjacencyList list = vertex_list[node_id];
+    AdjacencyListNode* head = list.head;
+    while(head) {
+        cout << head->get_destination() << ":" << head->get_weight() << endl;
+        head = head->next;
     }
 }

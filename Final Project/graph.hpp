@@ -9,6 +9,7 @@ class Graph {
         Graph(int size);
         void add_edge(int source, int destination, int weight);
         void print();
+        void print_adjacent_nodes(int id);
     private:
         int size;
         AdjacencyList vertex_list[100];

@@ -1,7 +1,9 @@
 #include "graph.hpp"
 
 int main() {
+    //Number of cities to list
     const int size = 5;
+    //Initialize the graph
     Graph graph(size);
 
     //Populate the graph with test values
@@ -13,7 +15,8 @@ int main() {
     graph.add_edge(2, 3, 100);
     graph.add_edge(3, 4, 50);
  
-    graph.print();
+    graph.print_adjacent_nodes(0);
  
     return 0;
 }
+
