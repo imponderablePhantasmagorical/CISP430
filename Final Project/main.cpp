@@ -15,8 +15,12 @@ int main() {
     graph.add_edge(2, 3, 100);
     graph.add_edge(3, 4, 50);
  
-    graph.print_adjacent_nodes(0);
+    //Print nodes adjacent to Sacramento
+    graph.print_adjacent_airports(0);
+
+    //Print nodes adjacent to Las Vegas
+    graph.print_adjacent_airports(1);
+    
  
     return 0;
 }
-
